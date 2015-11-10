@@ -1,13 +1,13 @@
 require "spec_helper"
 
 class Location
-  def initialize(args = {}); end
-  def latitude
-    40.39258072
+  attr_accessor :latitude, :longitude
+
+  def initialize(args = {})
+    self.latitude = args[:latitude]
+    self.longitude = args[:longitude]
   end
-  def longitude
-    -3.69140625
-  end
+  
 end
 
 describe Location do
