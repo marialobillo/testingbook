@@ -8,8 +8,8 @@ class Location
 
   def near?(lat, long, mile_radius)
     raise ArgumentError unless mile_radius >= 0
-    loc = Location.new(:latitude => lat, :longitude => long)
-     R * haversine_distance(loc) <= mile_radius
+    # loc = Location.new(:latitude => lat, :longitude => long)
+    # R * haversine_distance(loc) <= mile_radius
   end
 
 

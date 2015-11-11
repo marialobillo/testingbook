@@ -28,6 +28,12 @@ describe Location do
       subject { air_space }
       it { should_not be_near(latitude * 10, longitude * 10, 1) }
     end
+    context "when a negative radius is used" do
+      it "raised an error" do
+        expect { air_space.near?(latitude, longitude, -1) }
+          .to raise_error ArgumentError
+      end
+    end
   end
 
   
