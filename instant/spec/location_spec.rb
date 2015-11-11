@@ -21,8 +21,14 @@ describe Location do
 
   describe "#near?" do
     context "When whithin the specified radius" do
-      subject { air_space.near?(latitude, longitude, 1) }
-       it { should be true }
+      subject { air_space }
+       it { should be_near(latitude, longitude, 1) }
     end
-   end
+    context "When outside the specified radius" do
+      subject { air_space }
+      it { should_not be_near(latitude * 10, longitude * 10, 1) }
+    end
+  end
+
+  
 end
