@@ -1,7 +1,5 @@
 require "spec_helper"
 
-
-
 describe Location do
   describe "#initialize" do
     it "sets the latitude and longitud" do
