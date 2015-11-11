@@ -1,6 +1,10 @@
 require "spec_helper"
 
 describe Location do
+  let(:latitude) { 40.39258072 }
+  let(:longitude) { -3.69140625 }
+  let(:air_space) { Location.new(:latitude => 40.39258072,
+                                 :longitude => -3.69140625) }
   describe "#initialize" do
     it "sets the latitude and longitud" do
       loc = Location.new(:latitude => 40.39258072,
@@ -14,4 +18,11 @@ describe Location do
       loc.longitude.should == 1
     end
   end
+
+  describe "#near?" do
+    context "When whithin the specified radius" do
+      subject { air_space.near?(latitude, longitude, 1) }
+       it { should be_true }
+    end
+   end
 end
