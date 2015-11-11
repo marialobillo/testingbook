@@ -22,7 +22,7 @@ describe Location do
   describe "#near?" do
     context "When whithin the specified radius" do
       subject { air_space.near?(latitude, longitude, 1) }
-       it { should be_true }
+       it { should be true }
     end
    end
 end

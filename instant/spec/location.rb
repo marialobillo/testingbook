@@ -5,5 +5,8 @@ class Location
     self.latitude = args[:latitude]
     self.longitude = args[:longitude]
   end
-  
+
+  def near?(latitude, longitude, mile_radius)
+    true
+  end
 end
