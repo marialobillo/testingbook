@@ -11,7 +11,7 @@ print "Year: "
 year = gets.chomp
 
 print "Color: "
-color = get.chomp
+color = gets.chomp
 
 car = Car.new(:make => make, :year => year, :color => color)
 
