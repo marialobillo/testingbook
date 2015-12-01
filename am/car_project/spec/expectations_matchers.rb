@@ -28,10 +28,26 @@ describe 'Expectation Matchers' do
        a = "2 cats"
       b = "2 cats"
       expect(a).not_to equal(b)
-      
+
       c = b
       expect(b).to equal(c)
       expect(c).to be(c)
+    end
+  end
+
+  describre 'equivalence truthiness matchers' do
+
+    it 'will match true/false' do
+
+    end
+
+    it 'will match truthy/falsey' do
+      expect(1 < 2).to be_truthy
+      expect(1 > 2).to be_falsey
+
+      expect('foo').to be_truthy
+      expect(nil).to be_falsey
+      expect(0).not_to be_falsey
     end
   end
 end
