@@ -62,5 +62,30 @@ describe 'Expectation Matchers' do
       expect(false).not_to be_nil
       expect(0).not_to be_nil
     end
+
   end
+
+  describe 'other useful matchers' do
+
+    it 'will match string with a regex' do
+
+    end
+
+    it 'will match object types' do
+
+    end
+
+    it 'will match objects with #respond_to' do
+
+    end
+
+    it 'will math class instances with #have_attributes' do
+
+    end
+
+    it 'will match anything with #satisfy' do
+      
+    end
+  end
+
 end
