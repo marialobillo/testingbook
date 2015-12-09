@@ -155,4 +155,23 @@ describe 'Expectation Matchers' do
     end
   end
 
+  describe 'observation matchers' do
+
+    it 'will match when events change object attributes' do
+
+    end
+
+    it 'will match when events change any values' do
+
+    end
+
+    it 'will match when errors are raised' do
+
+    end
+
+    it 'will match when output is generated' do
+      
+    end
+
+  end
 end
