@@ -235,7 +235,15 @@ describe 'Expectation Matchers' do
     end
 
     it 'will match using noun-phrase aliases for matchers' do
+      fruits = ['apple', 'banana', 'cherry']
+      expect(fruits).to start_with( start_with('a') ) &
+        include( match(/a.a.a/) ) &
+        end_with( end_with('y') )
 
+      fruits = ['apple', 'banana', 'cherry']
+      expect(fruits).to start_with(a_string_starting_with('a') ) &
+        include( a_string_matching(/a.a.a/) ) &
+        end_with( a_string_ending_with('y') )
     end
   end
 end
