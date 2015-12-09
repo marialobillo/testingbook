@@ -127,6 +127,18 @@ describe 'Expectation Matchers' do
 
     it 'will match have_* to custom methods like has_*?' do
 
+
+      hash = {:a => 1, :b => 2}
+      expect(hash).to have_key(:a)
+      expect(hash).to have_value(2)
+
+      class Customer
+        def has_pending_order?; true; end
+      end
+      customer = Customer.new
+
+      expect(customer).to have_pending_order
+      expect(customer.has_pending_order?).to be true
     end
   end
 
