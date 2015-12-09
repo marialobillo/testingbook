@@ -35,7 +35,7 @@ describe 'Expectation Matchers' do
     end
   end
 
-  describre 'equivalence truthiness matchers' do
+  describe 'equivalence truthiness matchers' do
 
     it 'will match true/false' do
       expect(1 < 2).to be(true)
@@ -91,15 +91,28 @@ describe 'Expectation Matchers' do
     it 'will match objects with #respond_to' do
       string = 'test'
       expect(string).to respond_to(:length)
-      expect(string).not_to responde_to(:sort)
+      expect(string).not_to respond_to(:sort)
     end
 
     it 'will math class instances with #have_attributes' do
+      class Car
+        attr_accessor :make, :year, :color
+      end
+      car = Car.new
+      car.make = 'Dodge'
+      car.year = 2010
+      car.color = 'green'
 
+      expect(car).to have_attributes(:color => 'green')
+      expect(car).to have_attributes(
+        :make => 'Dodge', :year => 2010, :color => 'green'
+      )
     end
 
     it 'will match anything with #satisfy' do
-
+      expect(10).to satisfy do |value|
+        (value >= 5) && (value <= 10) && (value % 2 == 0)
+      end
     end
   end
 
