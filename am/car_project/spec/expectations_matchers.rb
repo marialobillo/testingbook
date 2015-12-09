@@ -201,4 +201,24 @@ describe 'Expectation Matchers' do
     end
 
   end
+
+  describe 'compound expectations' do
+
+    it 'will match using: and, or, &, |' do
+      expect([1,2,3,4]).to start_with(1).and end_with(4)
+
+      expect([1,2,3,4]).to start_with(1) & include(2)
+
+      expect(10 * 10).to be_odd.or be > 50
+
+      array = ['hello', 'goodbye'].shuffle
+      expect(array.first).to eq("hello") | eq("goodbye")
+    end
+
+  end
+
+  describe 'composing matchers' do
+
+    
+  end
 end
