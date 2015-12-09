@@ -89,7 +89,9 @@ describe 'Expectation Matchers' do
     end
 
     it 'will match objects with #respond_to' do
-
+      string = 'test'
+      expect(string).to respond_to(:length)
+      expect(string).not_to responde_to(:sort)
     end
 
     it 'will math class instances with #have_attributes' do
@@ -97,6 +99,33 @@ describe 'Expectation Matchers' do
     end
 
     it 'will match anything with #satisfy' do
+
+    end
+  end
+
+  describe 'predicate matchers' do
+
+    it 'will match be_* to custom methods ending in ?' do
+
+      expect([]).to be_empty
+      expect(1).to be_integer
+      expect(0).to be_zero
+      expect(1).to be_nonzero
+      expect(1).to be_odd
+      expect(2).to be_even
+
+
+      class Product
+        def visible?; true; end
+      end
+      product = Product.new
+
+      expect(product).to be_visible
+
+      expect(product.visible?).to be true
+    end
+
+    it 'will match have_* to custom methods like has_*?' do
 
     end
   end
