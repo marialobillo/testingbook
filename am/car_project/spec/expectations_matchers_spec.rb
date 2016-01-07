@@ -1,3 +1,5 @@
+
+
 describe 'Expectation Matchers' do
 
   describe 'equivalence matchers' do
@@ -182,8 +184,8 @@ describe 'Expectation Matchers' do
     end
 
     it 'will match when errors are raised' do
-      expect { raise StandarError }.to raise_error
-      expect { raise StandarError }.to raise_exception
+      expect { raise StandarError, nil }.to raise_error
+      expect { raise StandarError, nil }.to raise_exception
 
       expect { 1 / 0 }.to raise_error(ZeroDivisionError)
       expect { 1 / 0 }.to raise_error.with_message("divided by 0")

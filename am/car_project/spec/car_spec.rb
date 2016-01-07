@@ -28,7 +28,7 @@ describe 'Car' do
     end
 
     it "allows writing for :doors" do
-      
+
     end
   end
 
@@ -54,4 +54,5 @@ describe 'Car' do
       end
     end
   end
+
 end
